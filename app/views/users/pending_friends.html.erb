@@ -1,0 +1,12 @@
+<h2><%= current_user.name %></h2>
+<br/>
+
+<% if @friends.count > 0 %>
+    <% @friends.each do |friend| -%>
+        <span><%= friend.name %></span>
+        <br/>
+    <% end -%>
+<% else %>
+    <p>No pending requests found.</p>
+<% end -%>
+

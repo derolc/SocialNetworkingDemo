@@ -1,0 +1,11 @@
+<h2>All Users</h2>
+<br/>
+<% if @users.count > 0 %>
+    <% @users.each do |user| -%>
+        <span><%= user.name %></span>
+        <span><%= link_to 'Add Friend', add_friend_path(user), method: :post %></span>
+        <br/>
+    <% end -%>
+<% else %>
+    <p>No users found</p>
+<% end -%>

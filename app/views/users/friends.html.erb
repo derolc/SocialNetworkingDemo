@@ -1,0 +1,12 @@
+<h2><%= current_user.name %></h2>
+<br/>
+
+<% if @friends.count > 0 %>
+    <% @friends.each do |friend| -%>
+        <span><%= friend.name %></span>
+        <span><%= link_to 'Remove Friend', remove_friend_path(friend), method: :delete %></span>
+        <br/>
+    <% end -%>
+<% else %>
+    <p>No friends found.</p>
+<% end -%>

@@ -2,11 +2,24 @@
 <html>
 <head>
   <title>SocialNetworkingDemo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user %>
+    <div class="nav fr">
+      <div class="nav-item"><%= link_to 'Home', users_path %></div>
+      <div class="nav-item"><%= link_to 'My Friends', friends_users_path %></div>
+      <div class="nav-item"><%= link_to 'Friend Requests', requested_friends_users_path %></div>
+      <div class="nav-item"><%= link_to 'Pending Requests', pending_friends_users_path %></div>
+      <div class="nav-item">
+        <%= current_user.name %>
+        (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)
+      </div>
+    </div>
+    <div class="cb"></div>
+<% end %>
 
 <%= yield %>
 
