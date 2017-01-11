@@ -19,6 +19,12 @@
       </div>
     </div>
     <div class="cb"></div>
+
+    <script>
+      $(function () {
+        initializeWebSocket("<%= current_user.id %>")
+      });
+    </script>
 <% end %>
 
 <%= yield %>

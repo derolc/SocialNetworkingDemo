@@ -5,6 +5,7 @@
     <% @friends.each do |friend| -%>
         <span><%= friend.name %></span>
         <span><%= link_to 'Remove Friend', remove_friend_path(friend), method: :delete %></span>
+        <span><%= link_to 'Chat', start_chat_path({id: friend.id}), method: :post %></span>
         <br/>
     <% end -%>
 <% else %>

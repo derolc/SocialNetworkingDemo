@@ -1,0 +1,10 @@
+<input type="text" id="chat-message" onkeypress="return sendMessageText(event);"/>
+<button id="send-message" onclick="sendMessage()">Send Message</button>
+<br>
+<div id="message-content"></div>
+
+<script type="text/javascript">
+  $(function () {
+    subscribeChannel("<%= params[:id] %>", "<%= current_user.id %>");
+  });
+</script>

@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     end
   end
 
+
   post 'add_friend/:id' => 'friendship#add_friend', as: :add_friend
   delete 'remove_friend/:id' => 'friendship#remove_friend', as: :remove_friend
   post 'accept_friend/:id' => 'friendship#accept_friend', as: :accept_friend
   post 'reject_friend/:id' => 'friendship#reject_friend', as: :reject_friend
+  post 'chat' => 'chats#chat', as: :start_chat
 
   root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
